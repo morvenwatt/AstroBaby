@@ -1,0 +1,57 @@
+/* Don't forget to do the media queries you numbskull */
+
+html {
+    background-image: url('./StarBookImages/coverStarBook.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+body * {
+    display: border-box;
+    color: white;
+    font-family: exo;
+}
+
+/* HEADER */
+.hero {
+    display: block;
+    width: 100%;
+    height: 300px;
+    text-align: center;
+    color: white;
+}
+h1 {
+    font-size: 35px;
+    letter-spacing: 3px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    color: white;
+    font-size: 20px;
+    border: 2px solid white;
+    margin: auto;
+    margin-top: 15px;
+}
+header.hero {
+    height: 250px;
+}
+a:hover {
+    color: magenta;
+}
+
+/* .nasa {
+    background-image: url('./StarBookImages/FebStarBook.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.activities {
+    background-image: url('./StarBookImages/May3StarBook.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+} */
