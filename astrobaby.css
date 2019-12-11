@@ -1,13 +1,13 @@
 /* Don't forget to do the media queries you numbskull */
 
 html {
-    background-image: url('./StarBookImages/coverStarBook.jpg');
+    /* background-image: url('./StarBookImages/coverStarBook.jpg');
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; */
 }
 body * {
     display: border-box;
-    color: white;
+    color: black;
     font-family: exo;
 }
 

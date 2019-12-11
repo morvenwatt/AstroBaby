@@ -31,8 +31,24 @@ function getAPOD() {
   .catch (err =>{
     $('.error-message').text(`We can't seem to find any stars today: ${err.message}`)
   })
+  console.log('test', responseJson)
   }
+
+  function displayAPOD(responseJson) {
+    $('.results').empty();
+    $('.results').append.html(`
+    <p><img src='${responseJson.hdurl}'></p> 
+    <p>${responseJson.explanation}</p>
+    <p>${responseJson.title}</p>`)
+   }
   
+   function watchInput() {
+    $('.starButton').on('submit', event => {
+      event.preventDefault();
+      getAPOD();
+    })
+  }
+
 
 // Generation Functions (pages content)
 function generateHero() {
@@ -61,6 +77,7 @@ function generateIntroPage() {
     `
 }
 
+
 function generateNasaPage() {
     return `
     <h1> NASA </h1>
@@ -71,7 +88,6 @@ function generateNasaPage() {
             <p class='starButton'><input type='submit'></p>
                 <div class='results'></div>
                      <p class='error-message'></p>
-  
 
     <h2> Image search? </h2>
 
@@ -103,13 +119,7 @@ function displayActivitiesPage() {
     $("main").attr('class', 'activities').html(generateActivitiesPage());
 }
 
-function displayAPOD(responseJson) {
-    $('.results').empty();
-    $('.results').html(`
-    <p><img src='${responseJson.hdurl}'></p> 
-    <p>${responseJson.explanation}</p>
-    <p>${responseJson.copyright}</p>`)
-   }
+
 
 // Event Handlers
 function handleIntroLink() {
@@ -127,18 +137,12 @@ function handleActivitiesLink() {
         displayActivitiesPage();
     })
 }
-function watchInput() {
-    $('.starButton').on('submit', event => {
-      event.preventDefault();
-      getAPOD();
-    })
-  }
+
 
 function setUpEventHandlers() {
     handleNasaLink();
     handleIntroLink();
     handleActivitiesLink();
-    watchInput();
 }
 
 function initializeUI() {
@@ -146,5 +150,6 @@ function initializeUI() {
     displayIntroPage();
     rotateHeroDescriptors();
     setUpEventHandlers();
+    watchInput();
 }
 $(initializeUI);
